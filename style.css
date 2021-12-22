@@ -1,0 +1,973 @@
+@charset "UTF-8";
+/*            LISTE DES CHOSES A FAIRE
+
+
+
+
+- Il y a des choses a nester
+- Voir pour l'organissation des dossiers 7-1
+
+- Faire une boucle pour les images des cartes resto....
+- Voir pour faire des variables pour les box-shadows
+- Test de mettre des hovers dans les mixins !
+
+- Faire un breakpoint entre 400/700 les cartes sont trop étirées...
+- Modifier la taille du logo en vue desktop ou pas ?
+
+- BIEN RANGER LE SCSS
+*/
+html {
+  overflow-x: hidden;
+  /*cursor: url("images/logo/cursor.png") 4 12, auto;*/
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin-inline: 0px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(#FF79DA), to(#9356DC));
+  background: linear-gradient(transparent, #FF79DA, #9356DC);
+  border-radius: 6px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 2px 1px lightgrey;
+          box-shadow: 0px 2px 2px 1px lightgrey;
+}
+
+.header__logo {
+  height: 40%;
+  width: 50%;
+  padding-bottom: 10px;
+  /* pour le moment...*/
+}
+
+@media screen and (min-width: 768px) {
+  .header__logo {
+    width: 40%;
+  }
+}
+
+/*.background {
+    display: none;
+    @media screen and (min-width: 1245px){
+      display: initial;
+      height: 295px;
+    object-fit: cover;
+      margin-top: 105px;
+    }
+}*/
+ul {
+  padding: inherit;
+}
+
+li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #dfddddb3;
+}
+
+.location__descript {
+  font-weight: bold;
+  margin-right: 30px;
+  /*peut etre revoir la font size*/
+}
+
+.location__icon {
+  margin-right: 15px;
+}
+
+.discovery {
+  /* Général BACKGROUND */
+  background-color: #99E2D0;
+  background-color: #ecfaf6;
+  height: 290px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .discovery {
+    background-color: inherit;
+    width: 45%;
+    height: inherit;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .discovery {
+    /*peut etre le retirer vu qu'il n'y a plus la vidéo*/
+    width: 30%;
+  }
+}
+
+.discovery h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100px;
+  margin: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .discovery h2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    height: inherit;
+    margin: initial;
+    margin-top: 48px;
+  }
+}
+
+.discovery__btn {
+  margin-top: 15px;
+  height: 50px;
+  background-image: linear-gradient(0.99turn, #9356DC, #FF79DA);
+  /*voir si on peut mettre les hovers direct dedans O.O!!!!!!!!*/
+  -webkit-box-shadow: 1.5px 5px 10px 2px lightgrey;
+          box-shadow: 1.5px 5px 10px 2px lightgrey;
+  color: white;
+  font-size: larger;
+  padding-inline: 20px;
+  border: none;
+  border-radius: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .discovery__btn {
+    margin-top: 57px;
+  }
+}
+
+.discovery .discovery__btn:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  background-image: linear-gradient(0.01turn, #9356DC, #FF79DA);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .discovery .discovery__descript {
+    margin-top: 70px;
+    font-size: large;
+  }
+}
+
+.tutorial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  padding-inline: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .tutorial {
+    padding-inline: inherit;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .tutorial {
+    width: 30%;
+  }
+}
+
+.tutorial h2 {
+  margin-top: 105px;
+  margin-bottom: 25px;
+  width: 100%;
+  margin-top: 50px;
+  margin-left: 15px;
+  width: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  .tutorial h2 {
+    text-align: center;
+    margin-left: inherit;
+    width: 100%;
+  }
+}
+
+.tutorial__elem {
+  margin-bottom: 15px;
+  padding-inline: 5px;
+}
+
+.tutorial__elem .tutorial__step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #9356DC;
+  color: white;
+  position: absolute;
+}
+
+.tutorial__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Général BACKGROUND */
+  background-color: #99E2D0;
+  background-color: #ecfaf6;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+  height: 65px;
+  -webkit-box-shadow: 1.5px 5px 10px 2px lightgrey;
+          box-shadow: 1.5px 5px 10px 2px lightgrey;
+  color: black;
+  font-size: x-large;
+  padding-inline: 20px;
+  border: none;
+  border-radius: 25px;
+  margin-left: 15px;
+  font-size: larger;
+  width: 100%;
+}
+
+.tutorial__button .tutorial__icons {
+  margin-left: 10px;
+  width: 35px;
+  color: grey;
+}
+
+.tutorial__button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  background-color: #9356DC;
+  background-color: #f2eafb;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.tutorial__button:hover .tutorial__icons {
+  color: #9356DC;
+}
+
+.restaurant {
+  /* Général BACKGROUND */
+  background-color: #99E2D0;
+  background-color: #ecfaf6;
+  padding-inline: 20px;
+}
+
+.restaurant h2 {
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant {
+    padding-inline: inherit;
+  }
+  .restaurant__title {
+    text-align: center;
+  }
+}
+
+.restaurant__cards {
+  border-radius: 15px;
+  margin-left: 0px;
+  margin-right: 0px;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: white;
+  /*                                                                                           voir pour faire une boucle avec toutes les images !*/
+}
+
+.restaurant__cards:hover {
+  -webkit-box-shadow: 0 0 16px #0000002e;
+          box-shadow: 0 0 16px #0000002e;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant__cards {
+    height: 295px;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .restaurant__cards {
+    height: 400px;
+  }
+}
+
+.restaurant__cards .restaurant__img1 {
+  width: 100%;
+  height: 155px;
+  border-radius: 15px 15px 0px 0px;
+  background-size: cover;
+  background-image: url("images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant__cards .restaurant__img1 {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .restaurant__cards .restaurant__img1 {
+    height: 315px;
+  }
+}
+
+.restaurant__cards .restaurant__img2 {
+  width: 100%;
+  height: 155px;
+  border-radius: 15px 15px 0px 0px;
+  background-size: cover;
+  background-image: url("images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant__cards .restaurant__img2 {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .restaurant__cards .restaurant__img2 {
+    height: 315px;
+  }
+}
+
+.restaurant__cards .restaurant__img3 {
+  width: 100%;
+  height: 155px;
+  border-radius: 15px 15px 0px 0px;
+  background-size: cover;
+  background-image: url("images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-position: bottom;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant__cards .restaurant__img3 {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .restaurant__cards .restaurant__img3 {
+    height: 315px;
+  }
+}
+
+.restaurant__cards .restaurant__img4 {
+  width: 100%;
+  height: 155px;
+  border-radius: 15px 15px 0px 0px;
+  background-size: cover;
+  background-image: url("images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  background-position: bottom;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant__cards .restaurant__img4 {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .restaurant__cards .restaurant__img4 {
+    height: 315px;
+  }
+}
+
+.NEW_CONTENT {
+  position: relative;
+}
+
+.NEW_CONTENT::before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  content: "Nouveau";
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  width: 100px;
+  height: 35px;
+  background-color: #99E2D0;
+  color: #278870;
+  font-weight: bold;
+  border-radius: 2px;
+  -webkit-animation: NEW_CONTENT 2.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+          animation: NEW_CONTENT 2.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+}
+
+@-webkit-keyframes NEW_CONTENT {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes NEW_CONTENT {
+  50% {
+    opacity: 0;
+  }
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+figcaption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 15px;
+}
+
+.restaurant__descript {
+  width: 70%;
+}
+
+.restaurant__heart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+}
+
+/*.info {                                W3C DON'T LIKE THIS ONE unhappily :/
+    position: relative; 
+}
+.info:hover::after, 
+.info:focus::after {
+  content: attr(aria-label) ;  
+  position: absolute;
+  top: -3.2em;
+  left: 15%;
+  transform: translateX(-8%); 
+  z-index: 1; 
+  white-space: nowrap;
+  font-style: italic;
+  color: white;
+  background-color: #f000b4;
+  border-radius: 20px;  
+  padding: 8px;
+  display: none;
+  @media screen and (min-width: 1245px){
+      display: initial;
+  }
+}
+[aria-label]:hover:before,
+[aria-label]:focus:before {
+    content: "▼";
+    position: absolute;
+    top: -1.2em;
+    left: 30%;
+    transform: translateX(-50%); 
+    font-size: 20px;
+    color: #f000b4;
+    display: none;
+    @media screen and (min-width: 1245px){
+        display: initial;
+    }
+}
+[aria-label]:focus {
+  outline: none;
+}*/
+.restaurant__cards--links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .container .restaurant__cards--links {
+    width: 35%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+footer ul {
+  margin: inherit;
+}
+
+.footer {
+  background-color: #353535;
+  height: 200px;
+}
+
+@media screen and (min-width: 1290px) {
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.footer .footer__elem {
+  margin-left: 25px;
+}
+
+@media screen and (min-width: 1290px) {
+  .footer .footer__elem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.footer .footer__elem--links {
+  color: white;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1290px) {
+  .footer .footer__elem--links {
+    margin-bottom: 0px;
+    margin-inline: 65px;
+  }
+}
+
+.footer .footer__elem--links:hover {
+  /*A nester!!! */
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  color: #f000b4;
+}
+
+.footer .footer__elem--links:hover .footer__icons {
+  color: #9356DC;
+}
+
+.footer .footer__icons {
+  width: 25px;
+}
+
+.footer .footer__title {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: xx-large;
+  color: white;
+  font-family: 'Shrikhand';
+  font-style: italic;
+  font-weight: bold;
+  margin: 0px;
+  margin-left: 25px;
+  /*margin-top: 25px;*/
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 1290px) {
+  .footer .footer__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: inherit;
+    margin-bottom: inherit;
+  }
+}
+
+/*______*\
+--PAGE 2--
+\*      */
+.header2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header2__bg {
+  width: 100%;
+  height: 270px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .header2__bg {
+    height: 500px;
+  }
+}
+
+.header2__nav {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.header2__nav--link1 {
+  width: 15%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.header2__nav--link2 {
+  width: 70%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header2__nav--arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*position: relative;*/
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin-left: 10px;
+  color: black;
+}
+
+.header2__nav--arrow:hover {
+  color: white;
+  background-color: #9356DC;
+}
+
+/*.BACK::before {
+    position: absolute;
+    content: "Accueil";
+    left: 40px;
+    font-family: "roboto" , sans-serif;
+}                                                           Mon icone disparait quand je l'active o.O" dommage :(*/
+.menu {
+  /* Général BACKGROUND */
+  background-color: #99E2D0;
+  background-color: #ecfaf6;
+  position: relative;
+  border-radius: 35px 35px 0px 0px;
+  margin-top: -55px;
+  padding: 10px;
+}
+
+.menu__bloc {
+  padding-inline: 5px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 1290px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-top: -29px;
+    height: 721px;
+  }
+  .menu__bloc {
+    width: 30%;
+  }
+}
+
+.menu__titleBloc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .menu__titleBloc {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1290px) {
+  .menu__titleBloc {
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin-bottom: 25px;
+  }
+}
+
+.menu__titleBloc .menu__heart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.menu__title {
+  font-family: 'Shrikhand' , sans-serif;
+  font-size: 28px;
+}
+
+@media screen and (min-width: 768px) {
+  .menu__title {
+    margin-right: 30px;
+  }
+}
+
+.menu__underTitle {
+  margin-bottom: 3px;
+}
+
+.menu__underTitle--border {
+  width: 50px;
+  height: 3px;
+  background-color: #99E2D0;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1290px) {
+  .menu__underTitle--border {
+    margin-bottom: 40px;
+  }
+}
+
+.menu__btn {
+  /*faire une mixin pour all button !*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*width: 100%;*/
+  height: 60px;
+  /*peut etre pas besoin de hauteur...*/
+  border-radius: 15px;
+  margin-top: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 0 0 16px #0000002e;
+          box-shadow: 0 0 16px #0000002e;
+}
+
+@media screen and (min-width: 1290px) {
+  .menu__btn {
+    margin-bottom: 35px;
+  }
+}
+
+.menu__btn:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.menu__btn--margin {
+  margin-bottom: 40px;
+}
+
+.menu__descrip {
+  text-align: start;
+  width: 85%;
+  height: 42px;
+  /* span {  A voir pour les 3 petits points...
+        font-size: 1.1em;
+    }*/
+}
+
+.menu__descrip h4 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.menu__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 120px;
+  width: 100%;
+}
+
+.order__btn {
+  margin-top: 15px;
+  height: 50px;
+  background-image: linear-gradient(0.99turn, #9356DC, #FF79DA);
+  /*voir si on peut mettre les hovers direct dedans O.O!!!!!!!!*/
+  -webkit-box-shadow: 1.5px 5px 10px 2px lightgrey;
+          box-shadow: 1.5px 5px 10px 2px lightgrey;
+  color: white;
+  font-size: larger;
+  padding-inline: 20px;
+  border: none;
+  border-radius: 40px;
+  width: 210px;
+}
+
+.order__btn:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  background-image: linear-gradient(0.01turn, #9356DC, #FF79DA);
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
